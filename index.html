@@ -2,8 +2,52 @@
 <!-- saved from url=(0026)https://mrstar2.github.io/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>笔记</title>
+	<style type="text/css">
+		.showCourse{
+			border:1px solid lightgreen;
+			padding: 10px;
+		}
+		.course{
+			margin:10px;
+		}
+	</style>
 </head>
 <body>
+	<div>
+		<button class="showCourse">Interior Design</button>
+		<div class="course">
+			<a href="https://www.undergradcatalog.registrar.vt.edu/">1.Virginia Polytechnic Institute and State University</a><br/>
+		</div>
+	</div>
+
+	<div>
+		<button class="showCourse">architechture</button>
+		<div class="course">
+			<a href="major/architechture/cornell/course.html">1.cornell</a><br/>
+			<a href="http://catalog.calpoly.edu/coursesaz/arch/">2.California Polytechnic State University</a><br/>
+			<a href="major/architechture/rice/course.html">3.Rice University</a><br/>
+			<a href="https://www.undergradcatalog.registrar.vt.edu/">4.Virginia Polytechnic Institute and State University</a><br/>
+		</div>
+	</div>
+
+	<div>
+		<button class="showCourse">landscape architecture</button>
+		<div class="course">
+			<a href="major/landscape architecture/cornell/course.html">1.cornell</a><br/>
+			<a href="http://catalog.calpoly.edu/coursesaz/la/">2.California Polytechnic State University</a><br/>
+			<a href="https://www.undergradcatalog.registrar.vt.edu/">3.Virginia Polytechnic Institute and State University</a><br/>
+		</div>
+	</div>
+	
+	<div>
+		<button class="showCourse">cityPlanning</button>
+		<div class="course">
+			<a href="major/cityPlanning/cornell/course.html">1.cornell</a><br/>
+			<a href="http://catalog.calpoly.edu/coursesaz/crp/">2.California Polytechnic State University</a><br/>
+			<a href="https://www.undergradcatalog.registrar.vt.edu/">3.Virginia Polytechnic Institute and State University</a><br/>
+		</div>
+	</div>
+	<--********** !-->
 	<button style="padding: 5px;border:3px solid yellow;border-radius: 3px;" onclick="document.getElementById(&#39;university&#39;).style.display==&#39;none&#39;?document.getElementById(&#39;university&#39;).style.display=&#39;grid&#39;:document.getElementById(&#39;university&#39;).style.display=&#39;none&#39;">
 		click to see Architecture university
 	</button>
@@ -52,8 +96,16 @@
 	<div class="major">
 		<h2>生产之学</h2>
 	<p>01农业arricultural1</p><p>03自然资源(农林渔牧)natualResource1</p><p>10通信技术communacation technology2</p><p>14工程学engineering</p><p>15engineer technology</p><p>46建造房屋</p><p>47家电机械</p><p>49运输物流</p><p>48精密制造技术</p><p>31公园、再生产、悠闲、健身、运动学</p><p>32基本技能和医疗常识</p><p>33市民活动</p><p>34保健相关知识和技能</p><p>35社交、沟通技能</p><p>36休闲游乐研究</p><p>37个人/自我提升</p><p>43安全学</p><p>12殡葬/美容/烹饪</p><p>19家政学</p></div>
-	<script src="./笔记_files/jquery.js.download"></script>
+		
+	<script type="text/javascript" src="lib/echart.js"></script>
+	<script type="text/javascript" src="lib/china.js" ></script>
+	<script type="text/javascript" src="lib/jquery.js" ></script>
+	<script type="text/javascript" src="lib/react.js" ></script>
+	<script type="text/javascript" src="lib/reactDom.js" ></script>
 	<script type="text/javascript">
+		$(".showCourse").click(function(){
+			$(this).next().toggle()
+		})
 		//*******************************
 		let art=['50艺术学'];
 		//*******************************
