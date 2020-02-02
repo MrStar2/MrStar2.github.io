@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="body"></div>
+    <script type="text/javascript" src="../../../lib/echart.js"></script>
+    <script type="text/javascript" src="../../../lib/china.js" ></script>
+    <script type="text/javascript" src="../../../lib/jquery.js" ></script>
+    <script type="text/javascript" src="../../../lib/react.js" ></script>
+    <script type="text/javascript" src="../../../lib/reactDom.js" ></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript">
+        let all1=data;
+        let all2=data1;
+        let newall1=[],_newall1=[],newall2=[],_newall2=[],_newall3=[];
+        for(let i of all1)
+        {
+            let index=[],string;
+            for(let j=0;j<i.length;j++)
+            {
+                if(i[j]=='-')
+                    index.push(j)
+            }
+            string=i.slice(index[0]+1,index[1]).replace(' ','').trim();
+            if(newall1.indexOf(string)<=-1)
+            {
+                newall1.push(string);
+                _newall1.push(i);
+            }
+            
+        }
+        console.log(newall1);
+
+        for(let i of all2)
+        {
+            let index=[],string;
+            for(let j=0;j<i.length;j++)
+            {
+                if(i[j]=='-')
+                    index.push(j)
+            }
+            string=i.slice(index[0]+1,index[1]).replace(' ','').trim();
+            if(newall2.indexOf(string)<=-1)
+            {
+                newall2.push(string);
+                _newall2.push(i);
+            }
+            if(newall1.indexOf(string)<=-1)
+            {
+                newall1.push(string)
+                _newall3.push(i);
+            }
+            
+        }
+
+        
+        console.log(_newall3)
+
+        for(let i of _newall1)
+        {
+            $('#body').append('<p><a href="'+i.slice(i.lastIndexOf('-')+1,i.length)+'">'+i.slice(i.indexOf('-')+1,i.lastIndexOf('-'))+'</a></p>')
+        }
+        for(let i of _newall3)
+        {
+            $('#body').append('<p><a  href="">'+i.slice(i.indexOf('-')+1,i.length)+'</a></p>')
+        }
+        for(let i=0;i<$("#body a").length-1;i++)
+        {
+            
+
+            for(let j=0;j<$("#body a").length-i-1;j++)
+            {
+                let text=$("#body a").eq(j).text().replace(/\s+/g,"");
+                let number=parseInt(text.slice(text.indexOf('P')+1,text.indexOf('-')));
+                let showtext=$("#body a").eq(j).text();
+                let href=$("#body a").eq(j)[0].href;
+
+                let nextText=$("#body a").eq(j+1).text().replace(/\s+/g,"");
+                let nextNumber=parseInt(nextText.slice(nextText.indexOf('P')+1,nextText.indexOf('-')));
+                let nextShowtext=$("#body a").eq(j+1).text();
+                let nextHref=$("#body a").eq(j+1)[0].href;
+                if(number>=nextNumber)
+                {
+                    $("#body a").eq(j).text(nextShowtext);
+                    $("#body a").eq(j+1).text(showtext);
+                    $("#body a").eq(j).attr("href",nextHref);
+                    $("#body a").eq(j+1).attr("href",href);
+                }
+            }
+        }
+        for(let i=0;i<$("#body a").length;i++)
+        {
+            if($("#body a").eq(i).attr("href")=='file:///C:/Users/25393/Desktop/test/cityPlanning/cornell/course.html')
+            {
+                $("#body a").eq(i).css("text-decoration",'none')
+                $("#body a").eq(i).click(function(event){
+                    event.preventDefault();   
+                })
+            }
+        }
+
+    </script>
+</body>
+</html>
