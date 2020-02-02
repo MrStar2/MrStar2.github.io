@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <p><a href="../../../allcourse.html">全部课程</a></p>
+	<div id="body"></div>
+	<script type="text/javascript" src="../../../lib/echart.js"></script>
+    <script type="text/javascript" src="../../../lib/china.js" ></script>
+    <script type="text/javascript" src="../../../lib/jquery.js" ></script>
+    <script type="text/javascript" src="../../../lib/react.js" ></script>
+    <script type="text/javascript" src="../../../lib/reactDom.js" ></script>
+    <script type="text/javascript" src="processData.js"></script>
+    <script type="text/javascript">
+        for(let i=0;i<data.length;i++)
+        {
+            $("#body").append("<a href='"+data[i].slice(data[i].lastIndexOf('-')+1,(data[i].length))+"'>"+data[i].slice(0,data[i].lastIndexOf('-'))+"</a><br/>")
+            if($("#body a").eq(i).attr("href").indexOf("http")<0)
+            {
+                console.log($("#body a").eq(i)[0])
+                $("#body a").eq(i).css("color",'green');
+                $("#body a").eq(i).click(function(e){
+                    e.preventDefault();   
+                })
+            }
+        }
+    	
+
+    </script>
+</body>
+</html>
