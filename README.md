@@ -1,1 +1,1 @@
-# mrstar2.github.io
+this website is created for learning muti major course.
