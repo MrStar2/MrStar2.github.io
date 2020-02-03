@@ -6,6 +6,7 @@
 		.showCourse{
 			border:1px solid lightgreen;
 			padding: 10px;
+			width:200px;
 		}
 		#undergraduate>div,#graduate>div{
 			margin:10px;
@@ -15,11 +16,11 @@
 </head>
 <body>
 	<header>
-		<div style="display:grid;grid-template-columns:50% 50%">
-			<button onclick="$("#undergraduate").toggle()">toggle undergraduate</button>
-			<button onclick="$("#graduate").toggle()">toggle graduate</button>
+		<div style="display:grid;grid-template-columns:50% 50%;align-items: center;justify-content: center;">
+			<button class="showCourse" onclick="$("#undergraduate").toggle()">toggle undergraduate</button>
+			<button class="showCourse" onclick="$("#graduate").toggle()">toggle graduate</button>
 		</div>
-		<div style="display:grid;grid-template-columns:auto auto auto auto">
+		<div style="display:grid;grid-template-columns:auto auto auto auto;align-items: center;justify-content: center;">
 			<button class="showCourse" onclick="$(".Interior_Design").toggle()">Interior Design</button>
 			<button class="showCourse" onclick="$(".architechture").toggle()">architechture</button>
 			<button class="showCourse" onclick="$(".landscape_architecture").toggle()">landscape architecture</button>
