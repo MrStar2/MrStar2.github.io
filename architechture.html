@@ -7,24 +7,33 @@
 			border:1px solid lightgreen;
 			padding: 10px;
 		}
-		.course{
+		#undergraduate>div,#graduate>div{
 			margin:10px;
+			border:1px solid lightgreen;
 		}
 	</style>
 </head>
 <body>
-	<div>
-		<button class="showCourse">Interior Design</button>
-		<div class="course">
+	<header>
+		<div style="display:grid;grid-template-columns:50% 50%">
+			<button onclick="$("#undergraduate").toggle()">toggle undergraduate</button>
+			<button onclick="$("#graduate").toggle()">toggle graduate</button>
+		</div>
+		<div style="display:grid;grid-template-columns:25% 25% 25% 25%">
+			<button class="showCourse" onclick="$(".Interior_Design").toggle()">Interior Design</button>
+			<button class="showCourse" onclick="$(".architechture").toggle()">architechture</button>
+			<button class="showCourse" onclick="$(".landscape_architecture").toggle()">landscape architecture</button>
+			<button class="showCourse" onclick="$(".cityPlanning").toggle()">cityPlanning</button>
+		</div>
+	</header>
+	<div style="display:grid;grid-template-columns:50% 50%">
+	<div id="undergraduate" style="border:2px solid lightred;">
+		<div class="Interior_Design">
 			<a href="https://www.undergradcatalog.registrar.vt.edu/1920/itds.html">1.Virginia Polytechnic Institute and State University</a><br/>
 			<a href="https://www.pratt.edu/academics/school-of-design/undergraduate-school-of-design/interior-design/interior-design-bfa/">2.Pratt Institute</a><br/>
 			<a href="https://www.pratt.edu/academics/school-of-design/graduate-school-of-design/interior-design-grad/interior-design-mfa/">2.Pratt Institute</a><br/>
 		</div>
-	</div>
-
-	<div>
-		<button class="showCourse">architechture</button>
-		<div class="course">
+		<div class="architechture">
 			<a href="major/architechture/cornell/course.html">1.cornell</a><br/>
 			<a href="http://catalog.calpoly.edu/coursesaz/arch/">2.California Polytechnic State University</a><br/>
 			<a href="major/architechture/rice/course.html">3.Rice University</a><br/>
@@ -34,21 +43,13 @@
 			<a href="https://www.pratt.edu/academics/architecture/grad-arch-urban-design/grad-dept-architecture/architecture-first-professional-m.-arch/">7.undergraduate Pratt Institute</a><br/>
 			<a href="https://www.pratt.edu/academics/architecture/grad-arch-urban-design/graduate-architecture-m.s.-arch/architecture-post-professional-m.s">7.undergraduate Pratt Institute</a><br/>
 		</div>
-	</div>
-
-	<div>
-		<button class="showCourse">landscape architecture</button>
-		<div class="course">
+		<div class="landscape_architecture">
 			<a href="major/landscape architecture/cornell/course.html">1.cornell</a><br/>
 			<a href="http://catalog.calpoly.edu/coursesaz/la/">2.California Polytechnic State University</a><br/>
 			<a href="https://www.undergradcatalog.registrar.vt.edu/1920/lar.html">3.Virginia Polytechnic Institute and State University</a><br/>
 			<a href="https://arch.usc.edu/courses">4.Southern California Institute of Architecture</a><br/>
 		</div>
-	</div>
-	
-	<div>
-		<button class="showCourse">cityPlanning</button>
-		<div class="course">
+		<div class="cityPlanning">
 			<a href="major/cityPlanning/cornell/course.html">1.cornell</a><br/>
 			<a href="http://catalog.calpoly.edu/coursesaz/crp/">2.California Polytechnic State University</a><br/>
 			<a href="https://www.undergradcatalog.registrar.vt.edu/1920/spia.html">3.Virginia Polytechnic Institute and State University</a><br/>
@@ -56,6 +57,39 @@
 			<a href="https://www.pratt.edu/academics/architecture/city-and-regional-planning/city-and-regional-planning-ms/">4.Pratt Institute</a><br/>
 			<a href="https://www.pratt.edu/academics/architecture/urban-placemaking-and-management/urban-placemaking-and-management-m.s">4.Pratt Institute</a><br/>
 		</div>
+	</div>
+		
+	<div id="graduate" style="border:2px solid lightred;>
+		<div class="Interior_Design">
+			<a href="https://www.undergradcatalog.registrar.vt.edu/1920/itds.html">1.Virginia Polytechnic Institute and State University</a><br/>
+			<a href="https://www.pratt.edu/academics/school-of-design/undergraduate-school-of-design/interior-design/interior-design-bfa/">2.Pratt Institute</a><br/>
+			<a href="https://www.pratt.edu/academics/school-of-design/graduate-school-of-design/interior-design-grad/interior-design-mfa/">2.Pratt Institute</a><br/>
+		</div>
+		<div class="architechture">
+			<a href="major/architechture/cornell/course.html">1.cornell</a><br/>
+			<a href="http://catalog.calpoly.edu/coursesaz/arch/">2.California Polytechnic State University</a><br/>
+			<a href="major/architechture/rice/course.html">3.Rice University</a><br/>
+			<a href="https://www.undergradcatalog.registrar.vt.edu/1920/arch.html">4.Virginia Polytechnic Institute and State University</a><br/>
+			<a href="http://coursecatalog.syr.edu/content.php?catoid=17&navoid=2213">5.Syracuse University</a><br/>					<a href="https://arch.usc.edu/courses">6.Southern California Institute of Architecture</a><br/>	
+			<a href="https://www.pratt.edu/academics/architecture/ug-dept-architecture/arch-b-arch/">7.undergraduate Pratt Institute</a><br/>	
+			<a href="https://www.pratt.edu/academics/architecture/grad-arch-urban-design/grad-dept-architecture/architecture-first-professional-m.-arch/">7.undergraduate Pratt Institute</a><br/>
+			<a href="https://www.pratt.edu/academics/architecture/grad-arch-urban-design/graduate-architecture-m.s.-arch/architecture-post-professional-m.s">7.undergraduate Pratt Institute</a><br/>
+		</div>
+		<div class="landscape_architecture">
+			<a href="major/landscape architecture/cornell/course.html">1.cornell</a><br/>
+			<a href="http://catalog.calpoly.edu/coursesaz/la/">2.California Polytechnic State University</a><br/>
+			<a href="https://www.undergradcatalog.registrar.vt.edu/1920/lar.html">3.Virginia Polytechnic Institute and State University</a><br/>
+			<a href="https://arch.usc.edu/courses">4.Southern California Institute of Architecture</a><br/>
+		</div>
+		<div class="cityPlanning">
+			<a href="major/cityPlanning/cornell/course.html">1.cornell</a><br/>
+			<a href="http://catalog.calpoly.edu/coursesaz/crp/">2.California Polytechnic State University</a><br/>
+			<a href="https://www.undergradcatalog.registrar.vt.edu/1920/spia.html">3.Virginia Polytechnic Institute and State University</a><br/>
+			<a href="https://www.pratt.edu/academics/architecture/grad-arch-urban-design/dept-urban-design/architecture-and-urban-design-ms/">4.Pratt Institute</a><br/>
+			<a href="https://www.pratt.edu/academics/architecture/city-and-regional-planning/city-and-regional-planning-ms/">4.Pratt Institute</a><br/>
+			<a href="https://www.pratt.edu/academics/architecture/urban-placemaking-and-management/urban-placemaking-and-management-m.s">4.Pratt Institute</a><br/>
+		</div>
+	</div>
 	</div>
 	<button style="padding: 5px;border:3px solid yellow;border-radius: 3px;" onclick="document.getElementById(&#39;university&#39;).style.display==&#39;none&#39;?document.getElementById(&#39;university&#39;).style.display=&#39;grid&#39;:document.getElementById(&#39;university&#39;).style.display=&#39;none&#39;">
 		click to see Architecture university
@@ -91,9 +125,4 @@
 	<script type="text/javascript" src="lib/jquery.js" ></script>
 	<script type="text/javascript" src="lib/react.js" ></script>
 	<script type="text/javascript" src="lib/reactDom.js" ></script>
-	<script type="text/javascript">
-		$(".showCourse").click(function(){
-			$(this).next().toggle()
-		})
-    </script>
   </body></html>
