@@ -37,7 +37,7 @@
       for(let i in tableData)
       {
         $("#head").append(`<th>${tableData[i].title}</th>`)  
-        dataLength.push(tableData.dataClass1.length+tableData.dataClass2?tableData.dataClass2.length:0)
+        dataLength.push(tableData[i].dataClass1.length+tableData[i].dataClass2?tableData[i].dataClass2.length:0)
       }
       console.log(dataLength);
     </script>
