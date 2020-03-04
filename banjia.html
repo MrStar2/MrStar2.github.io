@@ -1,4 +1,18 @@
 <html>
+  <style type="text/css">
+    td,th,table{
+      border:1px solid black;
+      border-collapse:collapse;
+      padding: 5px 10px;
+      text-align:center; 
+    }
+    .color1{
+      color:blue;
+    }
+    .color2{
+      color:green;
+    }
+  </style>
   <body>
     <div>
       <table>
@@ -7,39 +21,64 @@
     </div>
     <script src='lib/jquery.js'></script>
     <script>
-      let tableData=[
+     let tableData=[
         {
           title:'personnelCleaning',
           dataClass1:['洗发水','香皂','牙膏','洗衣粉','剃须刀','牙刷','牙缸','剪指甲刀','剪刀'],
-          dataClass2:['吹风机',],
+          dataClass2:['吹风机']
         },
         {
           title:'houseCleaning',
-          dataClass1:['卷纸','抽纸','垃圾袋','垃圾桶','扫把','地刮','簸箕',],
-          dataClass2:['马桶刷','马桶吸','洁厕液',]
+          dataClass1:['卷纸','抽纸','垃圾袋','垃圾桶','扫把','地刮','簸箕'],
+          dataClass2:['马桶刷','马桶吸','洁厕液']
         },
         {
           title:'kitchen',
           dataClass1:['快餐杯','筷子','勺子','洗洁精','矿泉水','烧水壶'],
-          dataClass2:['食用油','电饭煲','电磁炉','锅','米','盐','炒菜勺','炒菜铲','菜刀','油壶','调料盒','削皮刀','大漏勺','案板','海绵擦','钢丝球',],
+          dataClass2:['食用油','电饭煲','电磁炉','锅','米','盐','炒菜勺','炒菜铲','菜刀','油壶','调料盒','削皮刀','大漏勺','案板','海绵擦','钢丝球']
         },
         {
           title:'houseProduct',
-          dataClass1:['被子','褥子','单子','枕头套件','衣柜','杂物箱','防火面罩','鞋柜','衣架',],
-          dataClass2:['冰箱','洗衣机',]
+          dataClass1:['被子','褥子','单子','枕头套件','衣柜','杂物箱','防火面罩','鞋柜','衣架'],
+          dataClass2:['冰箱','洗衣机']
         },
         {
           title:'personnProduct',
-          dataClass1:['行李箱','衣服','枕头套件','衣柜','杂物箱','防火面罩','鞋柜',]
+          dataClass1:['行李箱','衣服']
         },
       ];
       let dataLength=[];
       for(let i in tableData)
       {
         $("#head").append(`<th>${tableData[i].title}</th>`)  
-        dataLength.push(tableData[i].dataClass1.length+tableData[i].dataClass2?tableData[i].dataClass2.length:0)
+        let length=tableData[i].dataClass2?tableData[i].dataClass2.length:0;
+        dataLength.push(tableData[i].dataClass1.length+length)
       }
-      console.log(dataLength);
+      for(let j=0;j<Math.max(...dataLength);j++)
+       {
+        let content='';
+        for(let i=0;i<tableData.length;i++)
+          {
+            if(j<tableData[i].dataClass1.length)
+              {
+                content=content+'<td class="color1">'+tableData[i].dataClass1[j]+'</td>'
+              }
+            else 
+            {
+              if(tableData[i].dataClass2&&j<(tableData[i].dataClass2.length+tableData[i].dataClass1.length))
+                {          
+                  content=content+'<td class="color2">'+tableData[i].dataClass2[j-tableData[i].dataClass1.length]+'</td>';
+                }
+              else
+              {
+                content+='<td></td>'
+              }
+            }
+          }
+        let ele='<tr>'+content+'</tr>';
+        console.log(j,ele);
+        $("table").append(ele);
+      }
     </script>
   </body>
 </html>
